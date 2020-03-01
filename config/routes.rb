@@ -1,6 +1,3 @@
-# default top line
-# Rails.application.routes.draw do
-# top line from tutorial
 Blogger::Application.routes.draw do
 
   get 'months/jan'

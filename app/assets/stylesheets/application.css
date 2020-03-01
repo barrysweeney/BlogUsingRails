@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ #most_popular_container{
+    margin-bottom: 1em;
+
+ }

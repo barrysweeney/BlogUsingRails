@@ -3,6 +3,11 @@ class ArticlesController < ApplicationController
     before_action :require_login, only: [:create, :new, :edit, :update, :destroy]
   def index
     @articles = Article.all
+    @most_popular = Article.most_hit
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
   end
 
   def show
@@ -10,6 +15,8 @@ class ArticlesController < ApplicationController
     
     @comment = Comment.new
 @comment.article_id = @article.id
+
+@article.punch(request)
 
   end
 

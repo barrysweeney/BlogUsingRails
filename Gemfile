@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem "paperclip"
 gem 'sorcery'
+gem "punching_bag"
 
 
 # Reduces boot times through caching; required in config/boot.rb

@@ -1,14 +1,27 @@
-<h1>All Articles</h1>
+<div id="most_popular_conatiner" style="
+    margin-bottom: 1em;">
+<h1>Most Popular</h1>
+<ul id="articles">
+  <% @most_popular.each do |article| %>
+    <li>
+      <%= link_to article.title, article_path(article) %> <p> Views: <%=article.hits%> </p>
+    </li>
+  <% end %>
+</ul>
+</div>
 
+<div id="all_articles_container">
+<h1>All Articles</h1>
 <ul id="articles">
   <% @articles.each do |article| %>
     <li>
-      <%= link_to article.title, article_path(article) %>
+      <%= link_to article.title, article_path(article) %> <p> Views: <%=article.hits%> </p>
     </li>
 
     
   <% end %>
 </ul>
+</div>
 <%if logged_in?%>
 <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
 <%end%>
